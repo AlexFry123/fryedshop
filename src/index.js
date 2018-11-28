@@ -123,7 +123,7 @@ $(document).ready(function(){
 			})
 	});
 	$('#AllCategory').click(function(){
-		$.get("http://nit.tron.net.ua/api/product/list", function(json){
+		$.get("https://nit.tron.net.ua/api/product/list", function(json){
 			$('.product-grid').remove();
 			if($('.cartView').is(":visible")){
 			$('.cartView').hide();
