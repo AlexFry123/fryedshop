@@ -122,6 +122,16 @@ $(document).ready(function(){
 				console.log(data);
 			})
 	});
+	$('#AllCategory').click(function(){
+		$.get("http://nit.tron.net.ua/api/product/list", function(json){
+			$('.product-grid').remove();
+			if($('.cartView').is(":visible")){
+			$('.cartView').hide();
+			}
+			$('#content').append($(`<div class="row product-grid" id="gridOfProds">`));
+			json.forEach(categoryGrid => $('.product-grid').append(createItem(categoryGrid)));
+		});
+	});
 });
 
 let createItem = ({
